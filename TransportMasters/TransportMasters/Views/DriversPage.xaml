@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TransportMasters.Views.DriversPage">
+    <ContentPage.Content>
+        <Grid RowDefinitions="*,2,Auto">
+            <BoxView Grid.RowSpan="3">
+                <BoxView.Background>
+                    <LinearGradientBrush>
+                        <GradientStopCollection>
+                            <GradientStop Color="#1c1f1f" Offset="0"/>
+                            <GradientStop Color="#585e5e " Offset="2"/>
+                        </GradientStopCollection>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            <Grid >
+                <Frame 
+                Margin="10,-10,10,480"
+                CornerRadius="10"  
+                OutlineColor="#FFB7B7B7" 
+                Padding="0">
+
+                    <StackLayout>
+                        <Label Text="Drivers" TextColor="#1c2222" FontSize="15" FontAttributes="None" HorizontalOptions="Start" Margin="20,15,0,0"/>
+                        <Label Text="Cars" TextColor="#1c2222" FontSize="15" FontAttributes="None" HorizontalOptions="End" Margin="0,-20,20,10"/>
+                        <Grid >
+                            <Frame 
+                            Margin="10,0,200,0"
+                            CornerRadius="10"  
+                            OutlineColor="#FFB7B7B7" 
+                            Padding="10">
+                            </Frame>
+                            <StackLayout>
+                                <Label Text="9/10" TextColor="#1c2222" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,190,10"/>
+                            </StackLayout>
+                            <Frame 
+                            Margin="200,0,10,0"
+                            CornerRadius="10"  
+                            OutlineColor="#FFB7B7B7" 
+                            Padding="10">
+                            </Frame>
+                            <StackLayout>
+                                <Label Text="9/10" TextColor="#1c2222" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" Margin="190,10,0,10"/>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+            <Grid Margin="10,120,10,0">
+                <Frame 
+                Margin="0,0,0,0"
+                CornerRadius="10"  
+                OutlineColor="#FFB7B7B7" 
+                Padding="0">
+                    <ListView ItemsSource="{Binding DriversList}"
+                   HasUnevenRows="true"
+                   SeparatorVisibility="None"
+                   ItemTapped="OnItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid BackgroundColor="Azure" Padding="10" RowSpacing="10" ColumnSpacing="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image
+                                
+                                       HeightRequest="60"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        Aspect="AspectFill"
+                                       WidthRequest="66"
+                                       Grid.RowSpan="2"
+                                       Source="{Binding Image}"/>
+                                        <Label Grid.Column="1"
+                                       Text="{Binding Name}"
+                                       VerticalOptions="End"/>
+                                        <Label Grid.Column="1"
+                                       Grid.Row="1"
+                                       VerticalOptions="Start"
+                                       Text="{Binding Detail}"/>
+                                    </Grid>
+                                </ViewCell>
+                                <!-- <ViewCell Text="" TextColor="Black"/>-->
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+
+
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -8,19 +8,19 @@ using TransportMasters.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TransportMasters.Views 
+namespace TransportMasters.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Deliveries : ContentPage
+    public partial class DriversPage : ContentPage
     {
-        public Deliveries()
+        public DriversPage()
         {
             InitializeComponent();
-            BindingContext = new DeliveriesViewModel();
+            BindingContext = new DriversVievModel();
         }
         private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
         {
-            var mydetails = e.Item as DeliveriesModel;
+            var mydetails = e.Item as DriverModel;
             await Navigation.PushAsync(new DriverItemPage(mydetails.Name, mydetails.Ingredients, mydetails.Image));
 
         }

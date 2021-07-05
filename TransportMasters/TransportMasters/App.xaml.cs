@@ -1,5 +1,4 @@
 ﻿using System;
-using TransportMasters.Services;
 using TransportMasters.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,8 +11,6 @@ namespace TransportMasters
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
