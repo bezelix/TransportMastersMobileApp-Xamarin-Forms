@@ -21,7 +21,7 @@ namespace TransportMasters.Views
         private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
         {
             var mydetails = e.Item as DeliveriesModel;
-            await Navigation.PushAsync(new DriverItemPage(mydetails.Name, mydetails.Ingredients, mydetails.Image));
+            await Navigation.PushAsync(new VehicleItemPage(mydetails.Name, mydetails.Ingredients, mydetails.Image));
 
         }
     }

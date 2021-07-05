@@ -11,16 +11,16 @@ using Xamarin.Forms.Xaml;
 namespace TransportMasters.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DriversPage : ContentPage
+    public partial class VehiclesPage : ContentPage
     {
-        public DriversPage()
+        public VehiclesPage()
         {
             InitializeComponent();
-            BindingContext = new DriversVievModel();
+            BindingContext = new VehicleViewModel();
         }
         private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
         {
-            var mydetails = e.Item as DriverModel;
+            var mydetails = e.Item as Vehicle;
             await Navigation.PushAsync(new VehicleItemPage(mydetails.Name, mydetails.Ingredients, mydetails.Image));
 
         }

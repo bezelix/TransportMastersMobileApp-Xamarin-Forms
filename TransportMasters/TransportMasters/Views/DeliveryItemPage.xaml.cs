@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace TransportMasters.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DriverItemPage : ContentPage
+    public partial class VehicleItemPage : ContentPage
     {
-        public DriverItemPage(string Name, string Ingredients, string source)
+        public VehicleItemPage(string Name, string Ingredients, string source)
         {
             InitializeComponent();
             MyItemNameShow.Text = Name;
