@@ -11,42 +11,117 @@
     
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="Accent">#7354ff</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
-                </ContentView>
-            </StackLayout>
-        </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Start developing now" FontSize="Title"/>
-                <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="0,0,0,0"/>
-                <Label FontSize="16" Padding="0,24,0,0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Learn more at "/>
-                                <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Button Margin="0,10,0,0" Text="Learn more"
-                        Command="{Binding OpenWebCommand}"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
-            </StackLayout>
-        </ScrollView>
+    <Grid RowDefinitions="*,2,Auto">
+        <BoxView Grid.RowSpan="3">
+            
+            <BoxView.Background>
+                <LinearGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Color="#C0B1B1" Offset="0"/>
+                        <GradientStop Color="#000b2240 " Offset="2"/>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+        <Grid Margin="-1,-4,-5,380">
+            <Path Data="M0 40 L32 40 L64 40 L64 0 L0 0 Z" Aspect="Fill" Fill="#1d2122">
+
+            </Path>
+            <Label Text="AlvaroTrans" TextColor="Yellow" FontSize="25" FontAttributes="Bold" HorizontalOptions="End" Margin="0,20,20,50"/>
+            
+            <Label Text="Lvl : 15" TextColor="White" FontSize="15" FontAttributes="Bold" HorizontalOptions="End" Margin="0,140,20,30"/>
+            <Grid HeightRequest="210" WidthRequest="210" HorizontalOptions="Start" >
+                <Ellipse Stroke="White"  StrokeThickness="2" Aspect="Fill" Scale="0.6"/>
+                <Ellipse Stroke="White"  StrokeThickness="3" Aspect="Fill" Scale="0.65"/>
+                <Image x:Name="BannerImg" Source="IMG02.png" HeightRequest="195" WidthRequest="195" HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
+        <Grid>
+            
+            <Frame 
+                Margin="10,420,10,0"
+                CornerRadius="10"  
+                OutlineColor="#FFB7B7B7" 
+                Padding="0">
+                <StackLayout>
+                    
+                </StackLayout>
+            </Frame>
+            
+
+        </Grid>
+        <Grid >
+            <Frame 
+                Margin="10,190,10,180"
+                CornerRadius="10"  
+                OutlineColor="#FFB7B7B7" 
+                Padding="0">
+
+                <StackLayout>
+                    <Label Text="Account balance" TextColor="#1c2222" FontSize="15" FontAttributes="None" HorizontalOptions="Start" Margin="15,15,0,0"/>
+                    <Grid >
+                        <Frame 
+                            Margin="10,0,10,0"
+                            CornerRadius="10"  
+                            OutlineColor="#FFB7B7B7" 
+                            Padding="10">    
+                        </Frame>
+                        <StackLayout>
+                            <Label Text="10986$" TextColor="#1c2222" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,0,10"/>
+                        </StackLayout>
+                    </Grid>
+                    <Label Text="Premium Coins" TextColor="#1c2222" FontSize="15" FontAttributes="None" HorizontalOptions="Start" Margin="15,0,0,0"/>
+                    <Grid >
+                        <Frame 
+                            Margin="10,0,10,0"
+                            CornerRadius="10"  
+                            OutlineColor="#FFB7B7B7" 
+                            Padding="20,20,20,20">
+                        </Frame>
+                        <StackLayout>
+                            <Label Text="3460" TextColor="#1c2222" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                        </StackLayout>
+                    </Grid>
+                    <Label Text="Progress to next level" TextColor="#1c2222" FontSize="15" FontAttributes="None" HorizontalOptions="Start" Margin="15,0,0,0"/>
+                    <Grid >
+                        
+                        <StackLayout>
+                            <ProgressBar Margin="20,0,20,0" Progress="0.7"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>  
+            </Frame>
+            <Grid HorizontalOptions="Start" Margin="30,435,0,00" >
+                <StackLayout HorizontalOptions="Start" Spacing="15">
+                    <Button Text="Deliveries" TextColor="Black" BackgroundColor="#ffffff" WidthRequest="150" HeightRequest="46" 
+                            CornerRadius="23" HorizontalOptions="Center" Command="{Binding OrderCommand}"/>
+                </StackLayout>
+            </Grid>
+            <Grid HorizontalOptions="Start" Margin="30,525,40,0" >
+                <StackLayout HorizontalOptions="Start" Spacing="15">
+                    <Button Text="drivers" TextColor="Black" BackgroundColor="#ffffff" WidthRequest="150" HeightRequest="46" 
+                    CornerRadius="23" HorizontalOptions="Center" Command="{Binding OrderCommand}"/>
+                </StackLayout>
+            </Grid>
+            <Grid HorizontalOptions="End" Margin="0,435,30,0" >
+                <StackLayout HorizontalOptions="Start" Spacing="15">
+                    <Button Text="Messages" TextColor="Black" BackgroundColor="#ffffff" WidthRequest="150" HeightRequest="46" 
+                        CornerRadius="23" HorizontalOptions="Center" Command="{Binding OrderCommand}"/>
+                </StackLayout>
+            </Grid>
+            <Grid HorizontalOptions="End" Margin="0,525,30,0" >
+                <StackLayout HorizontalOptions="Start" Spacing="15">
+                    <Button Text="vehicles" TextColor="Black" BackgroundColor="#ffffff" WidthRequest="150" HeightRequest="46" 
+                        CornerRadius="23" HorizontalOptions="Center" Command="{Binding OrderCommand}"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
+        
     </Grid>
 
 </ContentPage>
