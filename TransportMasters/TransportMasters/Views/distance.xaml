@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TransportMasters.Views.distance">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                    <Image Margin="0,50,0,0" x:Name="imgBanner" Source="banner.png" ></Image>
+                    <Image Margin="0,0,0,10" x:Name="imgXamarinEssential" Source="xamarinessential.png" ></Image>
+                    <Label Margin="0,0,0,10" Text="GeoLocation" FontAttributes="Bold" FontSize="Large" TextColor="#CA6F1E" HorizontalTextAlignment="Center" ></Label>
+                    <Entry x:Name="txtSource" Placeholder="Source"></Entry>
+                    <Entry x:Name="txtDestination" Placeholder="Destination"></Entry>
+                    <Button x:Name="btnLocation" Text="Get Distance" Clicked="btnLocation_Clicked"/>
+                    <Label HorizontalTextAlignment="Center">full adress</Label>
+                    <Label HorizontalTextAlignment="Center" x:Name="fullAdress"></Label>
+                    <Label HorizontalTextAlignment="Center">id</Label>
+                    <Label HorizontalTextAlignment="Center" x:Name="id"></Label>
+                    <Label HorizontalTextAlignment="Center">Lat</Label>
+                    <Label HorizontalTextAlignment="Center" x:Name="lat"></Label>
+                    <Label HorizontalTextAlignment="Center">Lon</Label>
+                    <Label HorizontalTextAlignment="Center" x:Name="lon"></Label>
+                    <Label HorizontalTextAlignment="Center">Name</Label>
+                    <Label HorizontalTextAlignment="Center" x:Name="name"></Label>
+                    
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

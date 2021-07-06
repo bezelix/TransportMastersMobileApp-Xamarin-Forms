@@ -4,7 +4,7 @@
              x:Class="TransportMasters.Views.MapTests">
     <ContentPage.Content>
         <StackLayout>
-            
+            <maps:Map></maps:Map>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
