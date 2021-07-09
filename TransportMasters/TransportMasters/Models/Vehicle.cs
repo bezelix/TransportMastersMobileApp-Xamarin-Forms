@@ -6,9 +6,17 @@ namespace TransportMasters.Models
 {
     class Vehicle
     {
-        public string Name { get; set; }
-        public string Detail { get; set; }
-        public string Image { get; set; }
-        public string Ingredients { get; set; }
+        public int Id { get; set; }
+        public string ModelName { get; set; }
+        public int CarManufacturer { get; set; }
+        public DateTime ManufactureDate { get; set; }
+        public float Payload { get; set; }
+        public float Speed { get; set; }
+        public float StartPrice { get; set; }
+        public int CarCondition { get; set; }
+        public string LocalizationN { get; set; }
+        public string LocalizationE { get; set; }
+        public int Driver { get; set; }
+        public int Cargo { get; set; }
     }
 }

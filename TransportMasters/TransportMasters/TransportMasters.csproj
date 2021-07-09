@@ -33,7 +33,7 @@
     <EmbeddedResource Update="Views\DriversPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Page1.xaml">
+    <EmbeddedResource Update="Views\MarketplacePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
