@@ -84,7 +84,7 @@
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Deliveries" Icon="icon_feed.png">
-        <ShellContent Route="Deliveries" ContentTemplate="{DataTemplate local:Deliveries}" />
+        <ShellContent Route="Deliveries" ContentTemplate="{DataTemplate local:DeliveriesPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Drivers" Icon="icon_feed.png">
         <ShellContent Route="DriversPage" ContentTemplate="{DataTemplate local:DriversPage}" />

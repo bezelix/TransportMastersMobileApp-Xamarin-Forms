@@ -11,9 +11,9 @@ using Xamarin.Forms.Xaml;
 namespace TransportMasters.Views 
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Deliveries : ContentPage
+    public partial class DeliveriesPage : ContentPage
     {
-        public Deliveries()
+        public DeliveriesPage()
         {
             InitializeComponent();
             BindingContext = new DeliveriesViewModel();

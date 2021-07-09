@@ -31,9 +31,8 @@
             <Path Data="M0 40 L32 40 L64 40 L64 0 L0 0 Z" Aspect="Fill" Fill="#1d2122">
 
             </Path>
-            <Label Text="AlvaroTrans" TextColor="Yellow" FontSize="25" FontAttributes="Bold" HorizontalOptions="End" Margin="0,20,20,50"/>
-            
-            <Label Text="Lvl : 15" TextColor="White" FontSize="15" FontAttributes="Bold" HorizontalOptions="End" Margin="0,140,20,30"/>
+            <Label Text="{Binding FirstName}" TextColor="Yellow" FontSize="25" FontAttributes="Bold" HorizontalOptions="End" Margin="0,20,20,50"/>
+
             <Grid HeightRequest="210" WidthRequest="210" HorizontalOptions="Start" >
                 <Ellipse Stroke="White"  StrokeThickness="2" Aspect="Fill" Scale="0.6"/>
                 <Ellipse Stroke="White"  StrokeThickness="3" Aspect="Fill" Scale="0.65"/>
@@ -72,10 +71,11 @@
                             Padding="10">    
                         </Frame>
                         <StackLayout>
-                            <Label Text="10986$" TextColor="#1c2222" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,0,10"/>
+                            <Label Text="{Binding AccountBalance, StringFormat='{0}$'}" TextColor="#1c2222" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,0,10"/>
                         </StackLayout>
                     </Grid>
                     <Label Text="Premium Coins" TextColor="#1c2222" FontSize="15" FontAttributes="None" HorizontalOptions="Start" Margin="15,0,0,0"/>
+
                     <Grid >
                         <Frame 
                             Margin="10,0,10,0"
@@ -84,10 +84,12 @@
                             Padding="20,20,20,20">
                         </Frame>
                         <StackLayout>
-                            <Label Text="3460" TextColor="#1c2222" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                            <Label Text="{Binding PremiumPoints}" TextColor="#1c2222" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,0,0"/>
                         </StackLayout>
                     </Grid>
                     <Label Text="Progress to next level" TextColor="#1c2222" FontSize="15" FontAttributes="None" HorizontalOptions="Start" Margin="15,0,0,0"/>
+                    <Label Text="{Binding Lvl, StringFormat='Lvl:{0} '}" TextColor="Black" FontSize="15" FontAttributes="Bold" HorizontalOptions="End" Margin="0,-20,20,0"/>
+
                     <Grid >
                         
                         <StackLayout>
@@ -99,25 +101,25 @@
             <Grid HorizontalOptions="Start" Margin="30,435,0,00" >
                 <StackLayout HorizontalOptions="Start" Spacing="15">
                     <Button Text="Deliveries" TextColor="Black" BackgroundColor="#ffffff" WidthRequest="150" HeightRequest="46" 
-                            CornerRadius="23" HorizontalOptions="Center" Command="{Binding OrderCommand}"/>
+                            CornerRadius="23" HorizontalOptions="Center" Clicked="DeliveriesButton_OnClicked"/>
                 </StackLayout>
             </Grid>
             <Grid HorizontalOptions="Start" Margin="30,525,40,0" >
                 <StackLayout HorizontalOptions="Start" Spacing="15">
                     <Button Text="drivers" TextColor="Black" BackgroundColor="#ffffff" WidthRequest="150" HeightRequest="46" 
-                    CornerRadius="23" HorizontalOptions="Center" Command="{Binding OrderCommand}"/>
+                    CornerRadius="23" HorizontalOptions="Center" Clicked="DriversButton_OnClicked"/>
                 </StackLayout>
             </Grid>
             <Grid HorizontalOptions="End" Margin="0,435,30,0" >
                 <StackLayout HorizontalOptions="Start" Spacing="15">
                     <Button Text="Messages" TextColor="Black" BackgroundColor="#ffffff" WidthRequest="150" HeightRequest="46" 
-                        CornerRadius="23" HorizontalOptions="Center" Command="{Binding OrderCommand}"/>
+                        CornerRadius="23" HorizontalOptions="Center" Clicked="MessagesButton_OnClicked"/>
                 </StackLayout>
             </Grid>
             <Grid HorizontalOptions="End" Margin="0,525,30,0" >
                 <StackLayout HorizontalOptions="Start" Spacing="15">
                     <Button Text="vehicles" TextColor="Black" BackgroundColor="#ffffff" WidthRequest="150" HeightRequest="46" 
-                        CornerRadius="23" HorizontalOptions="Center" Command="{Binding OrderCommand}"/>
+                        CornerRadius="23" HorizontalOptions="Center" Clicked="VehiclesButton_OnClicked"/>
                 </StackLayout>
             </Grid>
         </Grid>

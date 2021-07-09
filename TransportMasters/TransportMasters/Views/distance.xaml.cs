@@ -23,7 +23,7 @@ namespace TransportMasters.Views
         {
             base.OnAppearing();
         }
-        public int ActualId { get; set; } = 340;
+        public int ActualId { get; set; } = 410;
         async void btnLocation_Clicked(object sender, System.EventArgs e)
         {
             try
@@ -485,66 +485,66 @@ namespace TransportMasters.Views
             if (citytId == 356) { item.StateId = 14; item.Name = "Lipsko"; _list.Add(item); };
             if (citytId == 357) { item.StateId = 14; item.Name = "Łosice"; _list.Add(item); };
             if (citytId == 358) { item.StateId = 14; item.Name = "Maków Mazowiecki"; _list.Add(item); };
-            if (citytId == 359) { item.StateId = 14; item.Name = "Różan"; _list.Add(item); };
+            if (citytId == 359) { item.StateId = 14; item.Name = "Różan"; _list.Add(item); }; //błąd w dodawaniu
             if (citytId == 360) { item.StateId = 14; item.Name = "Mińsk Mazowiecki"; _list.Add(item); };
             if (citytId == 361) { item.StateId = 14; item.Name = "Halinów"; _list.Add(item); };
-            if (citytId == 362) { item.StateId = 14; item.Name = "Kałuszyn"; _list.Add(item); };
-            if (citytId == 363) { item.StateId = 14; item.Name = "Mrozy"; _list.Add(item); };
-            if (citytId == 364) { item.StateId = 14; item.Name = "Sulejówek"; _list.Add(item); };
-            if (citytId == 365) { item.StateId = 14; item.Name = "Mława"; _list.Add(item); };
+            if (citytId == 362) { item.StateId = 14; item.Name = "Kałuszyn"; _list.Add(item); }; //błąd w dodawaniu
+            if (citytId == 363) { item.StateId = 14; item.Name = "Mrozy"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 364) { item.StateId = 14; item.Name = "Sulejówek"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 365) { item.StateId = 14; item.Name = "Mława"; _list.Add(item); };//błąd w dodawaniu
             if (citytId == 366) { item.StateId = 14; item.Name = "Nowy Dwór Mazowiecki"; _list.Add(item); };
             if (citytId == 367) { item.StateId = 14; item.Name = "Nasielsk"; _list.Add(item); };
             if (citytId == 368) { item.StateId = 14; item.Name = "Zakroczym"; _list.Add(item); };
-            if (citytId == 369) { item.StateId = 14; item.Name = "Myszyniec"; _list.Add(item); };
+            if (citytId == 369) { item.StateId = 14; item.Name = "Myszyniec"; _list.Add(item); };//błąd w dodawaniu
             if (citytId == 370) { item.StateId = 14; item.Name = "Ostrów Mazowiecka"; _list.Add(item); };
-            if (citytId == 371) { item.StateId = 14; item.Name = "Brok"; _list.Add(item); };
-            if (citytId == 372) { item.StateId = 14; item.Name = "Józefów"; _list.Add(item); };
-            if (citytId == 373) { item.StateId = 14; item.Name = "Otwock"; _list.Add(item); };
-            if (citytId == 374) { item.StateId = 14; item.Name = "Karczew"; _list.Add(item); };
+            if (citytId == 371) { item.StateId = 14; item.Name = "Brok"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 372) { item.StateId = 14; item.Name = "Józefów"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 373) { item.StateId = 14; item.Name = "Otwock"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 374) { item.StateId = 14; item.Name = "Karczew"; _list.Add(item); };//błąd w dodawaniu
             if (citytId == 375) { item.StateId = 14; item.Name = "Góra Kalwaria"; _list.Add(item); };
             if (citytId == 376) { item.StateId = 14; item.Name = "Konstancin-Jeziorna"; _list.Add(item); };
-            if (citytId == 377) { item.StateId = 14; item.Name = "Piaseczno"; _list.Add(item); };
+            if (citytId == 377) { item.StateId = 14; item.Name = "Piaseczno"; _list.Add(item); };//błąd w dodawaniu
             if (citytId == 378) { item.StateId = 14; item.Name = "Tarczyn"; _list.Add(item); };
             if (citytId == 379) { item.StateId = 14; item.Name = "Drobin"; _list.Add(item); };
-            if (citytId == 380) { item.StateId = 14; item.Name = "Gąbin"; _list.Add(item); };
+            if (citytId == 380) { item.StateId = 14; item.Name = "Gąbin"; _list.Add(item); };//błąd w dodawaniu
             if (citytId == 381) { item.StateId = 14; item.Name = "Wyszogród"; _list.Add(item); };
             if (citytId == 382) { item.StateId = 14; item.Name = "Płońsk"; _list.Add(item); };
-            if (citytId == 383) { item.StateId = 14; item.Name = "Raciąż"; _list.Add(item); };
-            if (citytId == 384) { item.StateId = 14; item.Name = "Piastów"; _list.Add(item); };
-            if (citytId == 385) { item.StateId = 14; item.Name = "Pruszków"; _list.Add(item); };
+            if (citytId == 383) { item.StateId = 14; item.Name = "Raciąż"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 384) { item.StateId = 14; item.Name = "Piastów"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 385) { item.StateId = 14; item.Name = "Pruszków"; _list.Add(item); };//błąd w dodawaniu
             if (citytId == 386) { item.StateId = 14; item.Name = "Brwinów"; _list.Add(item); };
             if (citytId == 387) { item.StateId = 14; item.Name = "Przasnysz"; _list.Add(item); };
-            if (citytId == 388) { item.StateId = 14; item.Name = "Chorzele"; _list.Add(item); };
-            if (citytId == 389) { item.StateId = 14; item.Name = "Przysucha"; _list.Add(item); };
+            if (citytId == 388) { item.StateId = 14; item.Name = "Chorzele"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 389) { item.StateId = 14; item.Name = "Przysucha"; _list.Add(item); };//błąd w dodawaniu
             if (citytId == 390) { item.StateId = 14; item.Name = "Pułtusk"; _list.Add(item); };
-            if (citytId == 391) { item.StateId = 14; item.Name = "Pionki"; _list.Add(item); };
+            if (citytId == 391) { item.StateId = 14; item.Name = "Pionki"; _list.Add(item); };//błąd w dodawaniu
             if (citytId == 392) { item.StateId = 14; item.Name = "Iłża"; _list.Add(item); };
             if (citytId == 393) { item.StateId = 14; item.Name = "Skaryszew"; _list.Add(item); };
             if (citytId == 394) { item.StateId = 14; item.Name = "Mordy"; _list.Add(item); };
-            if (citytId == 395) { item.StateId = 14; item.Name = "Sierpc"; _list.Add(item); };
-            if (citytId == 396) { item.StateId = 14; item.Name = "Sochaczew"; _list.Add(item); };
+            if (citytId == 395) { item.StateId = 14; item.Name = "Sierpc"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 396) { item.StateId = 14; item.Name = "Sochaczew"; _list.Add(item); };//błąd w dodawaniu
             if (citytId == 397) { item.StateId = 14; item.Name = "Sokołów Podlaski"; _list.Add(item); };
             if (citytId == 398) { item.StateId = 14; item.Name = "Kosów Lacki"; _list.Add(item); };
             if (citytId == 399) { item.StateId = 14; item.Name = "Szydłowiec"; _list.Add(item); };
             if (citytId == 400) { item.StateId = 14; item.Name = "Błonie"; _list.Add(item); };
             if (citytId == 401) { item.StateId = 14; item.Name = "Łomianki"; _list.Add(item); };
             if (citytId == 402) { item.StateId = 14; item.Name = "Ożarów Mazowiecki"; _list.Add(item); };
-            if (citytId == 403) { item.StateId = 14; item.Name = "Węgrów"; _list.Add(item); };
+            if (citytId == 403) { item.StateId = 14; item.Name = "Węgrów"; _list.Add(item); };//błąd w dodawaniu
             if (citytId == 404) { item.StateId = 14; item.Name = "Łochów"; _list.Add(item); };
             if (citytId == 405) { item.StateId = 14; item.Name = "Kobyłka"; _list.Add(item); };
-            if (citytId == 406) { item.StateId = 14; item.Name = "Marki"; _list.Add(item); };
-            if (citytId == 407) { item.StateId = 14; item.Name = "Ząbki"; _list.Add(item); };
-            if (citytId == 408) { item.StateId = 14; item.Name = "Zielonka"; _list.Add(item); };
-            if (citytId == 409) { item.StateId = 14; item.Name = "Radzymin"; _list.Add(item); };
-            if (citytId == 410) { item.StateId = 14; item.Name = "Tłuszcz"; _list.Add(item); };
+            if (citytId == 406) { item.StateId = 14; item.Name = "Marki"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 407) { item.StateId = 14; item.Name = "Ząbki"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 408) { item.StateId = 14; item.Name = "Zielonka"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 409) { item.StateId = 14; item.Name = "Radzymin"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 410) { item.StateId = 14; item.Name = "Tłuszcz"; _list.Add(item); };//błąd w dodawaniu
             if (citytId == 411) { item.StateId = 14; item.Name = "Wołomin"; _list.Add(item); };
-            if (citytId == 412) { item.StateId = 14; item.Name = "Wyszków"; _list.Add(item); };
-            if (citytId == 413) { item.StateId = 14; item.Name = "Zwoleń"; _list.Add(item); };
-            if (citytId == 414) { item.StateId = 14; item.Name = "Bieżuń"; _list.Add(item); };
+            if (citytId == 412) { item.StateId = 14; item.Name = "Wyszków"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 413) { item.StateId = 14; item.Name = "Zwoleń"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 414) { item.StateId = 14; item.Name = "Bieżuń"; _list.Add(item); };//błąd w dodawaniu
             if (citytId == 415) { item.StateId = 14; item.Name = "Żuromin"; _list.Add(item); };
-            if (citytId == 416) { item.StateId = 14; item.Name = "Żyrardów"; _list.Add(item); };
-            if (citytId == 417) { item.StateId = 14; item.Name = "Mszczonów"; _list.Add(item); };
-            if (citytId == 418) { item.StateId = 14; item.Name = "Ostrołęka"; _list.Add(item); };
+            if (citytId == 416) { item.StateId = 14; item.Name = "Żyrardów"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 417) { item.StateId = 14; item.Name = "Mszczonów"; _list.Add(item); };//błąd w dodawaniu
+            if (citytId == 418) { item.StateId = 14; item.Name = "Ostrołęka"; _list.Add(item); };//błąd w dodawaniu
             if (citytId == 419) { item.StateId = 14; item.Name = "Płock"; _list.Add(item); };
             if (citytId == 420) { item.StateId = 14; item.Name = "Radom"; _list.Add(item); };
             if (citytId == 421) { item.StateId = 14; item.Name = "Siedlce"; _list.Add(item); };

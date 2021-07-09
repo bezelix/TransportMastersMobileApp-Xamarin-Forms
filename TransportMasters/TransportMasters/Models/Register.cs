@@ -13,5 +13,8 @@ namespace TransportMasters.Models
         public string ConfirmPassword { get; set; }
         public string Nationality { get; set; }
         public DateTime? DateOfBirth { get; set; }
+        public int AccountBalance { get; set; }
+        public int Level { get; set; }
+        public int PremiumPoints { get; set; }
     }
 }
