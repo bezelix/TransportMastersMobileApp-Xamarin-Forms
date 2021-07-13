@@ -16,12 +16,12 @@ namespace TransportMasters.Views
         public MarketplacePage()
         {
             InitializeComponent();
-            BindingContext = new MarketplaceViewModel();
+            //BindingContext = new MarketplaceViewModel();
         }
-        //private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
-        //{
-        //    var mydetails = e.Item as Vehicle;
-        //   // await Navigation.PushAsync(new VehicleItemPage(mydetails.Name, mydetails.Ingredients, mydetails.Image));
-        //}
+        private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
+        {
+            var mydetails = e.Item as Vehicle;
+             await Navigation.PushAsync(new MarketplaceItemPage(mydetails));
+        }
     }
 }

@@ -20,8 +20,8 @@ namespace TransportMasters.Views
         }
         private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
         {
-            var mydetails = e.Item as Vehicle;
-            await Navigation.PushAsync(new VehicleItemPage(mydetails.Name, mydetails.Ingredients, mydetails.Image));
+            //var mydetails = e.Item as Vehicle;
+            //await Navigation.PushAsync(new VehicleItemPage(mydetails.Name, mydetails.Ingredients, mydetails.Image));
 
         }
     }

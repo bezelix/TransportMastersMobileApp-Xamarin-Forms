@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TransportMasters.Views.MarketplacePage">
+             xmlns:local="clr-namespace:TransportMasters.ViewModels"
+             x:Class="TransportMasters.Views.MarketplacePage"
+             >
+    <ContentPage.BindingContext>
+        <local:MarketplaceViewModel/>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <Grid RowDefinitions="*,2,Auto">
             <BoxView Grid.RowSpan="3">
@@ -15,6 +21,7 @@
                 </BoxView.Background>
             </BoxView>
             <Grid >
+                <ActivityIndicator IsRunning="{Binding Busy}" IsVisible="{Binding Busy}"/>
                 <Frame 
                 Margin="10,-10,10,480"
                 CornerRadius="10"  
@@ -48,19 +55,20 @@
                 </Frame>
             </Grid>
             <Grid Margin="10,120,10,0">
-                <Frame 
-                Margin="0,0,0,0"
-                CornerRadius="10"  
-                OutlineColor="#FFB7B7B7" 
-                Padding="0">
-                    <ListView ItemsSource="{Binding VehicleList}"
+                <ListView ItemsSource="{Binding VehicleList}"
                    HasUnevenRows="true"
                    SeparatorVisibility="None"
                    ItemTapped="OnItemSelected">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <Grid BackgroundColor="Azure" Padding="10" RowSpacing="10" ColumnSpacing="10">
+                                <Frame 
+                                    Margin="0,0,0,10"
+                                    CornerRadius="10"  
+                                    OutlineColor="#Azure" 
+                                    Padding="0">        
+                                    <Grid BackgroundColor="Azure" HeightRequest="200" Padding="10" RowSpacing="5" ColumnSpacing="10" >
+
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="*"/>
@@ -71,30 +79,42 @@
                                         </Grid.ColumnDefinitions>
 
                                         <Image
-                                
-                                       HeightRequest="60"
-                                        HorizontalOptions="CenterAndExpand"
-                                        VerticalOptions="CenterAndExpand"
-                                        Aspect="AspectFill"
-                                       WidthRequest="66"
-                                       Grid.RowSpan="2"
-                                       Source="{Binding Image}"/>
-                                        <Label Grid.Column="1"
-                                       Text="{Binding Name}"
-                                       VerticalOptions="End"/>
-                                        <Label Grid.Column="1"
-                                       Grid.Row="1"
-                                       VerticalOptions="Start"
-                                       Text="{Binding Detail}"/>
+                                           VerticalOptions="Start"
+                                           HeightRequest="120"
+                                           WidthRequest="176"
+                                           HorizontalOptions="CenterAndExpand"
+                                           Aspect="AspectFill"
+                                           Grid.RowSpan="2"
+                                           Source="https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjhzNzJtb2J3MmZmdjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.9fsWNm5sNScdsQv5JJ2WRcbnOEhzn53X77JvP__Dk7c/image;s=1080x720"/>
+                                        <Button Text="Messages" TextColor="Black" BackgroundColor="#ffffff" WidthRequest="150" HeightRequest="46" 
+                                                CornerRadius="23" HorizontalOptions="Center" Clicked="MessagesButton_OnClicked"/>
+                                        
+                                        <Label Grid.Column="1" FontAttributes="Bold" FontSize="17"
+                                           Text="{Binding StartPrice, StringFormat='{0}:$'}"
+                                           VerticalOptions="Start"
+                                           HorizontalOptions="End"/>
+                                        <Label Grid.Column="1" FontAttributes="Bold" FontSize="16"
+                                           VerticalOptions="Start"
+                                           Text="{Binding CarManufacturer}"/>
+                                        <Label Grid.Column="1" FontAttributes="Bold" FontSize="16" Margin="0,20,0,0"
+                                            VerticalOptions="Start"
+                                            HorizontalTextAlignment="Start"
+                                            Text="{Binding ModelName}"/>
+                                        <Label Grid.Column="1" FontAttributes="None" FontSize="16" Margin="0,40,0,0"
+                                            VerticalOptions="Start"
+                                            HorizontalTextAlignment="Start"
+                                            Text="{Binding CarCondition, StringFormat='Car Condition:{0}'}"/>
+                                        <Label Grid.Column="1" FontAttributes="None" FontSize="16" Margin="0,0,0,0"
+                                           Grid.Row="3"
+                                           VerticalOptions="Start"
+                                           Text="{Binding ManufactureDate, StringFormat='{}{0:dd.MM.yyyy}'}"/>
                                     </Grid>
-                                </ViewCell>
+                                </Frame>
+                            </ViewCell>
                                 <!-- <ViewCell Text="" TextColor="Black"/>-->
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                </Frame>
-
-
             </Grid>
 
         </Grid>

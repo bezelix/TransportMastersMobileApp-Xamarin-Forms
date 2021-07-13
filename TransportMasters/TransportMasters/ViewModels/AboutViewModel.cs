@@ -93,7 +93,7 @@ namespace TransportMasters.ViewModels
                     var Item = JsonConvert.DeserializeObject<Register>(content);
                     FirstName = Item.FirstName;
                     AccountBalance = Item.AccountBalance.ToString();
-                    Lvl= Item.Level.ToString();
+                    Lvl = Item.Level.ToString();
                     PremiumPoints = Item.PremiumPoints.ToString();
                 }
                 else
