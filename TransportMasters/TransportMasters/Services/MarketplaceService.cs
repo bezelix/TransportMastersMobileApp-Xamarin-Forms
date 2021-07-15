@@ -2,22 +2,48 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using TransportMasters.Models;
+using Xamarin.Forms;
 
 namespace TransportMasters.Services
 {
-    class MarketplaceService
+    class MarketplaceService : INotifyPropertyChanged
     {
-        public ObservableCollection<Vehicle> VehicleList { get; set; }
+        private ObservableCollection<Vehicle> _vehicleList;
+        public ObservableCollection<Vehicle> VehicleList
+        {
+            get
+            {
+                return _vehicleList;
+            }
+
+            set
+            {
+
+                if (_vehicleList != value)
+                {
+                    _vehicleList = value;
+                    if (PropertyChanged != null)
+                    {
+                        PropertyChanged(this, new PropertyChangedEventArgs("VehicleList"));
+                    }
+                }
+            }
+        }
+        public List<Event> EventsList { get; set; }
         public MarketplaceService()
         {
             VehicleList = new ObservableCollection<Vehicle>();
-            //RefreshDataAsync();
+            EventsList = new List<Event>();
+            
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private async void RefreshDataAsync()
         {
@@ -41,12 +67,12 @@ namespace TransportMasters.Services
             {
 
             }
-
         }
+
+
         public async Task<ObservableCollection<Vehicle>> GetMarketplacePositions()
         {
             RefreshDataAsync();
-            Thread.Sleep(4000);
             return await Task.FromResult(VehicleList);
         }
     }

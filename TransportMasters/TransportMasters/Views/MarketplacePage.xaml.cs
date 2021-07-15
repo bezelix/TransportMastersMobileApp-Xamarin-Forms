@@ -16,7 +16,7 @@ namespace TransportMasters.Views
         public MarketplacePage()
         {
             InitializeComponent();
-            //BindingContext = new MarketplaceViewModel();
+            BindingContext = new MarketplaceViewModel();
         }
         private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
         {

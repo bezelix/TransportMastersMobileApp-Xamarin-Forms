@@ -2,12 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TransportMasters.ViewModels"
+             xmlns:converters="clr-namespace:TransportMasters.Converters"
              x:Class="TransportMasters.Views.MarketplacePage"
              >
     <ContentPage.BindingContext>
         <local:MarketplaceViewModel/>
     </ContentPage.BindingContext>
-    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DateToTimespan x:Key="DateToTimespan"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid RowDefinitions="*,2,Auto">
             <BoxView Grid.RowSpan="3">
@@ -39,7 +44,7 @@
                             Padding="10">
                             </Frame>
                             <StackLayout>
-                                <Label Text="9/10" TextColor="#1c2222" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,190,10"/>
+                                <Label Text="{Binding VehicleListDateTime}" TextColor="#1c2222" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,190,10"/>
                             </StackLayout>
                             <Frame 
                             Margin="200,0,10,0"
@@ -55,66 +60,46 @@
                 </Frame>
             </Grid>
             <Grid Margin="10,120,10,0">
-                <ListView ItemsSource="{Binding VehicleList}"
-                   HasUnevenRows="true"
-                   SeparatorVisibility="None"
-                   ItemTapped="OnItemSelected">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                <Frame 
-                                    Margin="0,0,0,10"
-                                    CornerRadius="10"  
-                                    OutlineColor="#Azure" 
-                                    Padding="0">        
-                                    <Grid BackgroundColor="Azure" HeightRequest="200" Padding="10" RowSpacing="5" ColumnSpacing="10" >
-
+                <CollectionView x:Name="eventList" ItemsLayout="VerticalList" ItemsSource="{Binding VehicleList}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <ContentView>
+                                <Frame HasShadow="True" CornerRadius="15" Margin="0,5" Padding="10" HeightRequest="100" BackgroundColor="Black">
+                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="*"/>
                                         </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
+                                        <Image Source="clock.png" Aspect="AspectFit" HorizontalOptions="End" Grid.RowSpan="2"/>
+                                        <StackLayout Orientation="Horizontal" Spacing="10">
+                                            <BoxView WidthRequest="12" HeightRequest="12" CornerRadius="6" BackgroundColor="#F8F8F8" VerticalOptions="Center"/>
+                                            <Label Text="{Binding Timespan}" FontSize="12" TextColor="#F8F8F8"/>
+                                        </StackLayout>
 
-                                        <Image
-                                           VerticalOptions="Start"
-                                           HeightRequest="120"
-                                           WidthRequest="176"
-                                           HorizontalOptions="CenterAndExpand"
-                                           Aspect="AspectFill"
-                                           Grid.RowSpan="2"
-                                           Source="https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjhzNzJtb2J3MmZmdjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.9fsWNm5sNScdsQv5JJ2WRcbnOEhzn53X77JvP__Dk7c/image;s=1080x720"/>
-                                        <Button Text="Messages" TextColor="Black" BackgroundColor="#ffffff" WidthRequest="150" HeightRequest="46" 
-                                                CornerRadius="23" HorizontalOptions="Center" Clicked="MessagesButton_OnClicked"/>
-                                        
-                                        <Label Grid.Column="1" FontAttributes="Bold" FontSize="17"
-                                           Text="{Binding StartPrice, StringFormat='{0}:$'}"
-                                           VerticalOptions="Start"
-                                           HorizontalOptions="End"/>
-                                        <Label Grid.Column="1" FontAttributes="Bold" FontSize="16"
-                                           VerticalOptions="Start"
-                                           Text="{Binding CarManufacturer}"/>
-                                        <Label Grid.Column="1" FontAttributes="Bold" FontSize="16" Margin="0,20,0,0"
-                                            VerticalOptions="Start"
-                                            HorizontalTextAlignment="Start"
-                                            Text="{Binding ModelName}"/>
-                                        <Label Grid.Column="1" FontAttributes="None" FontSize="16" Margin="0,40,0,0"
-                                            VerticalOptions="Start"
-                                            HorizontalTextAlignment="Start"
-                                            Text="{Binding CarCondition, StringFormat='Car Condition:{0}'}"/>
-                                        <Label Grid.Column="1" FontAttributes="None" FontSize="16" Margin="0,0,0,0"
-                                           Grid.Row="3"
-                                           VerticalOptions="Start"
-                                           Text="{Binding ManufactureDate, StringFormat='{}{0:dd.MM.yyyy}'}"/>
+                                        <StackLayout Orientation="Horizontal" Grid.Row="1" HorizontalOptions="End" Margin="10" Spacing="15">
+                                            <StackLayout>
+                                                <Label Text="{Binding Days}" FontSize="35" FontAttributes="Bold" TextColor="White" HorizontalOptions="End"/>
+                                                <Label Text="DAYS" FontSize="10" TextColor="White" Opacity="0.5" HorizontalOptions="End" Margin="0,-5,0,0"/>
+                                            </StackLayout>
+                                            <StackLayout>
+                                                <Label Text="{Binding Hours}" FontSize="35" FontAttributes="Bold" TextColor="White" HorizontalOptions="End"/>
+                                                <Label Text="HOURS" FontSize="10" TextColor="White" Opacity="0.5" HorizontalOptions="End" Margin="0,-5,0,0"/>
+                                            </StackLayout>
+                                            <StackLayout>
+                                                <Label Text="{Binding Minutes}" FontSize="35" FontAttributes="Bold" TextColor="White" HorizontalOptions="End"/>
+                                                <Label Text="MINUTES" FontSize="10" TextColor="White" Opacity="0.5" HorizontalOptions="End" Margin="0,-5,0,0"/>
+                                            </StackLayout>
+                                            <StackLayout>
+                                                <Label Text="{Binding Seconds}" FontSize="35" FontAttributes="Bold" TextColor="White" HorizontalOptions="End"/>
+                                                <Label Text="SECONDS" FontSize="10" TextColor="White" Opacity="0.5" HorizontalOptions="End" Margin="0,-5,0,0"/>
+                                            </StackLayout>
+                                        </StackLayout>
                                     </Grid>
                                 </Frame>
-                            </ViewCell>
-                                <!-- <ViewCell Text="" TextColor="Black"/>-->
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                            </ContentView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </Grid>
 
         </Grid>
