@@ -1,13 +1,148 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TransportMasters.Views.MarketplaceItemPage">
-    <ContentPage.Content>
+             x:Class="TransportMasters.Views.MarketplaceItemPage"
+             xmlns:vm="clr-namespace:TransportMasters.ViewModels" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:MarketplaceItemPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#7354ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-        <StackLayout HorizontalOptions="Center">
-            <Label Text="Welcome to Burger App"/>
-            <Label x:Name="ModelName" HorizontalTextAlignment="Center"/>
-            <Label x:Name="CarManufacturer" HorizontalTextAlignment="Center"/>
-        </StackLayout>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="*,2,Auto">
+            <BoxView Grid.RowSpan="3">
+
+                <BoxView.Background>
+                    <LinearGradientBrush>
+                        <GradientStopCollection>
+                            <GradientStop Color="#C0B1B1" Offset="0"/>
+                            <GradientStop Color="#000b2240 " Offset="2"/>
+                        </GradientStopCollection>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            <Grid Margin="-1,-4,-5,340">
+                <Path Data="M0 40 L32 40 L64 40 L64 0 L0 0 Z" Aspect="Fill" Fill="#1d2122">
+
+                </Path>
+
+                <Grid HeightRequest="210" HorizontalOptions="Start" Margin="15,0,20,0" >
+                    <Image
+                       VerticalOptions="Start"
+                       HeightRequest="180"
+                       WidthRequest="250"
+                       HorizontalOptions="Start"
+                       Grid.Column="0"
+                       Margin="10,20,0,0"
+                       Aspect="AspectFill"
+                       Source="https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjhzNzJtb2J3MmZmdjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.9fsWNm5sNScdsQv5JJ2WRcbnOEhzn53X77JvP__Dk7c/image;s=1080x720"
+                    />
+                    <StackLayout HorizontalOptions="Start" Grid.Column="1" Margin="10,20,0,0">
+                        <StackLayout HorizontalOptions="Start">
+                            <Label Text="DAYS" x:Name="CarCondition" FontSize="15" FontAttributes="Bold" TextColor="White" HorizontalOptions="Start"/>
+                            <Label Text="Car Condition" FontAttributes="Bold" FontSize="10" TextColor="White" Opacity="0.5" HorizontalOptions="Start" Margin="0,-5,0,0"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="Start">
+                            <Label Text="DAYS" x:Name="ManufactureDate" FontSize="15" FontAttributes="Bold" TextColor="White" HorizontalOptions="Start"/>
+                            <Label Text="Manufacture Date" FontAttributes="Bold" FontSize="10" TextColor="White" Opacity="0.5" HorizontalOptions="Start" Margin="0,-5,0,0"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="Start">
+                            <Label Text="DAYS" x:Name="Payload" FontSize="15" FontAttributes="Bold" TextColor="White" HorizontalOptions="Start"/>
+                            <Label Text="Payload" FontAttributes="Bold" FontSize="10" TextColor="White" Opacity="0.5" HorizontalOptions="Start" Margin="0,-5,0,0"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="Start">
+                            <Label Text="DAYS" x:Name="Speed" FontSize="15" FontAttributes="Bold" TextColor="White" HorizontalOptions="Start"/>
+                            <Label Text="Speed" FontAttributes="Bold" FontSize="10" TextColor="White" Opacity="0.5" HorizontalOptions="Start" Margin="0,-5,0,0"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                </Grid>
+                
+            </Grid>
+            <Grid>
+
+                <Frame 
+                Margin="10,460,10,0"
+                CornerRadius="10"  
+                OutlineColor="#FFB7B7B7" 
+                Padding="0">
+                    <StackLayout>
+
+                    </StackLayout>
+                </Frame>
+            </Grid>
+            <Grid >
+                <Frame 
+                Margin="10,220,10,150"
+                CornerRadius="10"  
+                OutlineColor="#FFB7B7B7" 
+                Padding="0">
+
+                    <StackLayout>
+                        <Label Text="Market value" TextColor="#1c2222" FontSize="15" FontAttributes="None" HorizontalOptions="Start" Margin="15,15,0,0"/>
+                        <Grid >
+                            <Frame 
+                            Margin="10,0,10,0"
+                            CornerRadius="10"  
+                            OutlineColor="#FFB7B7B7" 
+                            Padding="10">
+                            </Frame>
+                            <StackLayout>
+                                <Label x:Name="StartPrice" TextColor="#1c2222" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,0,10"/>
+                            </StackLayout>
+                        </Grid>
+                        <Label Text="Highest bid" TextColor="#1c2222" FontSize="15" FontAttributes="None" HorizontalOptions="Start" Margin="15,0,0,0"/>
+
+                        <Grid >
+                            <Frame 
+                            Margin="10,0,10,0"
+                            CornerRadius="10"  
+                            OutlineColor="#FFB7B7B7" 
+                            Padding="20,20,20,20">
+                            </Frame>
+                            <StackLayout>
+                                <Label TextColor="#1c2222" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                            </StackLayout>
+                        </Grid>
+                        <Grid >
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Margin="0,15,0,0">
+                                <StackLayout>
+                                    <Label x:Name="Days" FontSize="15" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center"/>
+                                    <Label Text="DAYS" FontAttributes="Bold" FontSize="10" TextColor="Black" Opacity="0.5" HorizontalOptions="End" Margin="0,-5,0,0"/>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label x:Name="Hours" FontSize="15" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center"/>
+                                    <Label Text="HOURS" FontAttributes="Bold"  FontSize="10" TextColor="Black" Opacity="0.5" HorizontalOptions="End" Margin="0,-5,0,0"/>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label x:Name="Minutes" FontSize="15" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center"/>
+                                    <Label Text="MINUTES" FontAttributes="Bold"  FontSize="10" TextColor="Black" Opacity="0.5" HorizontalOptions="End" Margin="0,-5,0,0"/>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label x:Name="Seconds" FontSize="15" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center"/>
+                                    <Label Text="SECONDS" FontAttributes="Bold"  FontSize="10" TextColor="Black" Opacity="0.5" HorizontalOptions="End" Margin="0,-5,0,0"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                        
+                    </StackLayout>
+                </Frame>
+                <Grid HorizontalOptions="Center" Margin="0,470,0,0" >
+                    <Entry x:Name="Bid" Keyboard="Numeric" TextColor="Black" BackgroundColor="White" VerticalOptions="Start"  />
+                </Grid>
+                <Grid HorizontalOptions="Center" Margin="0,525,0,0" >
+                    <StackLayout HorizontalOptions="Start" Spacing="15">
+                        <Button Text="bid" TextColor="Black" BackgroundColor="Orange" WidthRequest="150" HeightRequest="46" 
+                        CornerRadius="23" HorizontalOptions="Center" Clicked="AddBid_OnClicked" />
+                    </StackLayout>
+                </Grid>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

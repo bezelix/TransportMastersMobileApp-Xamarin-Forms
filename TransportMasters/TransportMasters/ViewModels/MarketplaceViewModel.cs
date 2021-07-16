@@ -67,6 +67,7 @@ namespace TransportMasters.ViewModels
         }
   
         public string Email { get; set; }
+        public int id { get; set; }
 
         private MarketplaceService _marketplaceService;
 
@@ -74,6 +75,8 @@ namespace TransportMasters.ViewModels
 
         public MarketplaceViewModel()
         {
+            id = Preferences.Get("id", 0); 
+
             Email = Preferences.Get("e-mail", "Email");
             _marketplaceService = new MarketplaceService();
             VehicleList = new ObservableCollection<Vehicle>();

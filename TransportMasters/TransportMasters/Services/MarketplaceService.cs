@@ -35,12 +35,9 @@ namespace TransportMasters.Services
                 }
             }
         }
-        public List<Event> EventsList { get; set; }
         public MarketplaceService()
         {
             VehicleList = new ObservableCollection<Vehicle>();
-            EventsList = new List<Event>();
-            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -55,7 +52,6 @@ namespace TransportMasters.Services
 
             if (response.IsSuccessStatusCode)
             {
-                //VehicleList.Clear();
                 var content = await response.Content.ReadAsStringAsync();
                 var Items = JsonConvert.DeserializeObject<List<Vehicle>>(content);
                 foreach (var item in Items)
@@ -63,13 +59,7 @@ namespace TransportMasters.Services
                     VehicleList.Add(item);
                 }
             }
-            else
-            {
-
-            }
         }
-
-
         public async Task<ObservableCollection<Vehicle>> GetMarketplacePositions()
         {
             RefreshDataAsync();

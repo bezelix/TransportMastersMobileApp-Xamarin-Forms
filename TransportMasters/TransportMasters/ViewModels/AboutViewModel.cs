@@ -75,6 +75,7 @@ namespace TransportMasters.ViewModels
         {
             Title = "Main Page";
             Preferences.Set("e-mail", "tomasz@dupski.com");
+            Preferences.Set("id", 1);
             Email = Preferences.Get("e-mail", "Email");
             RefreshDataAsync(Email);
         }
