@@ -22,28 +22,6 @@ namespace TransportMasters.ViewModels
     [XamlCompilation(XamlCompilationOptions.Compile)]
     class MarketplaceViewModel : INotifyPropertyChanged
     {
-        DateTime dateTime;
-        public DateTime DateTime
-        {
-            get
-            {
-                return dateTime;
-            }
-
-            set
-            {
-
-                if (dateTime != value)
-                {
-                    dateTime = value;
-                    if (PropertyChanged != null)
-                    {
-                        PropertyChanged(this, new PropertyChangedEventArgs("DateTime"));
-                    }
-                }
-            }
-        }
-
         private ObservableCollection<Vehicle> _vehicleList;
         public ObservableCollection<Vehicle> VehicleList
         {
@@ -65,30 +43,7 @@ namespace TransportMasters.ViewModels
                 }
             }
         }
-        private ObservableCollection<Vehicle> _viewList;
-        public ObservableCollection<Vehicle> ViewList
-        {
-            get
-            {
-                return _viewList;
-            }
-            set
-            {
 
-                if (_viewList != value)
-                {
-                    _viewList = value;
-                    if (PropertyChanged != null)
-                    {
-                        PropertyChanged(this, new PropertyChangedEventArgs("ViewList"));
-                    }
-                }
-                else
-                {
-                    _viewList = value;
-                }
-            }
-        }
         private bool _busy;
         public bool Busy
         {
@@ -110,26 +65,7 @@ namespace TransportMasters.ViewModels
                 }
             }
         }
-        string _vehicleListDateTime;
-        public string VehicleListDateTime
-        {
-            get
-            {
-                return _vehicleListDateTime;
-            }
-
-            set
-            {
-                if (_vehicleListDateTime != value)
-                {
-                    _vehicleListDateTime = value;
-                    if (PropertyChanged != null)
-                    {
-                        PropertyChanged(this, new PropertyChangedEventArgs("VehicleListDateTime"));
-                    }
-                }
-            }
-        }
+  
         public string Email { get; set; }
 
         private MarketplaceService _marketplaceService;
@@ -141,36 +77,9 @@ namespace TransportMasters.ViewModels
             Email = Preferences.Get("e-mail", "Email");
             _marketplaceService = new MarketplaceService();
             VehicleList = new ObservableCollection<Vehicle>();
-            ViewList = new ObservableCollection<Vehicle>();
            
             LoadMarketplacePositions();
             Setup();
-            this.DateTime = DateTime.Now;
-            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
-            {
-                this.DateTime = DateTime.Now;
-                
-                foreach (var item in VehicleList)
-                {
-                    if (VehicleList.Count > 0)
-                    {
-                        if (ViewList.Contains(item))
-                        {
-                            var _object = ViewList.FirstOrDefault(i => i.Id == item.Id);
-                            var _offerStartTime = _object.OfferStartTime.AddHours(24);
-                            _object.Timespan = _offerStartTime - DateTime.Now;
-                            _object.TimespanString = _object.Timespan.ToString();
-
-                        }
-                        else
-                        {
-                            ViewList.Add(item);
-                        }
-                    }
-                }
-                return true;
-            });
-
         }
         public void LoadMarketplacePositions()
         {

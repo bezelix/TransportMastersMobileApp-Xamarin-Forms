@@ -18,10 +18,10 @@ namespace TransportMasters.Views
             InitializeComponent();
             BindingContext = new MarketplaceViewModel();
         }
-        private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
+        private async void OnItemSelected(object sender, SelectionChangedEventArgs e)
         {
-            var mydetails = e.Item as Vehicle;
-             await Navigation.PushAsync(new MarketplaceItemPage(mydetails));
+            var mydetails = e.CurrentSelection.FirstOrDefault() as Vehicle;
+            await Navigation.PushAsync(new MarketplaceItemPage(mydetails));
         }
     }
 }
